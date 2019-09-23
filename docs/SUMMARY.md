@@ -1,6 +1,5 @@
-* [Chapter1](docs/introduction.md)
-
-* [Chapter2](docs/algorithms.md)
-
-​		* [Secontion2.1](docs/algorithms.md)
-
+* [Introduction](docs/introduction.md)
+* [Fairness algorithms](docs/algorithms.md)
+   * [Preprocessing](docs/preprocessing.md)
+   * [Postprocessing](docs/postprocessing.md)
+   * [Add constraints](docs/constraints.md)

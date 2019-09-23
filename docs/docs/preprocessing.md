@@ -1,0 +1,97 @@
+### Preprocessing
+
+Notations:
+
+$$\mathbf{X}$$: entire data set of individuals  [dims: NxD]
+
+$$S$$: $$S \in \{0,1\}$$, if $$S=1$$, an individual is in a protected group, i.e. $$\mathbf{X}^+ \in \mathbf{X}$$, vice verse.
+
+$$Z$$: a multinomial r.v., where each of the $$K$$ values represents one of the intermediate set of "prototypes".
+
+$$\mathbf{v}$$: prototype locations [dims: KxD]
+
+$$w$$: weights that govern the mapping from the prototypes to classification decision $$y$$.
+
+
+
+Idea: The authors want to learn a mapping from $$X$$ to $$Z$$, so that membership in the protected group is lost:
+
+​									$$P(Z=k\mid \mathbf{x}^+ \in \mathbf{X}^+) = P(Z=k\mid \mathbf{x}^-\in \mathbf{X}^-)$$
+
+A set of prototypes $$k$$ induces a natural probabilistic mapping from $$\mathbf{X}$$ to $$Z$$ via softmax:
+
+​									$$P(Z=k\mid \mathbf{x})=\frac{\exp(-d(\mathbf{x},\mathbf{v}_k))}{\sum^K_{j=1}\exp(-d(\mathbf{x},\mathbf{v}_j))}$$
+
+In order to allow input features to have different impact level, the authors define:
+
+​									$$d(\mathbf{x}_n,\mathbf{v}_k,\alpha) = \sum^D_{i=1}\alpha_i(x_{ni}-v_{ki})^2$$
+
+
+
+Meantime, there are three constraints:
+
+1. The mapping satisfies statistical parity
+
+   Define:
+
+   ​							$$M_{n,k}=P(Z=k\mid \mathbf{x}_n)$$          $$\forall n,k$$
+
+   we want:
+
+   ​							$$M^+_k=M^-_k$$      $$\forall k$$
+
+   where:
+
+   ​							$$M^+_k = \mathbb{E}_{x\in X^+}P(X=k\mid \mathbf{x})=\frac{1}{|X^+|}\sum M_{n,k}$$
+
+   So the objective is:
+
+   ​							$$L_z = \sum^K_{k=1}\mid M^+_k - M^-_k\mid$$
+
+2. The mapping to $Z$-space keep information in $$\mathbf{X}$$ as much as possible (low reconstruction error)
+
+   Reconstruct:
+
+   ​							$$\hat{\mathbf{x}}_n = \sum^K_{k=1}M_{n,k}\mathbf{v}_k$$
+
+   reconstruction error (simply use least squares error):
+
+   ​							$$L_x = \sum^N_{n=1}(\mathbf{x}_n - \hat{\mathbf{x}}_n)^2$$
+
+
+
+3. induced mapping can still learn good mapping from $$\mathbf{X}$$ to $$Y$$
+
+   The prediction $$\hat{y}$$ is given by:
+
+   ​							$$\hat{y}_n = \sum^K_{k=1}M_{n,k}w_k$$
+
+   using cross entropy as loss function here:
+
+   ​							$$L_y = \sum^N_{n=1} -y_n\log \hat{y}_n - (1-y_n)\log (1-\hat{y}_n)$$
+
+
+
+So the final objective function is the combination of above three:
+
+​									$$L = A_z \cdot L_z + A_x \cdot L_x + A_y \cdot L_y $$
+
+where $$A_z, A_x, A_y$$ are hyperparameters.
+
+
+
+Then it becomes an optimisation problem (minimise $$L$$)~
+
+
+
+Proof that by force $$L_z$$ to 0 can remove sensitive memberships:
+
+$$\begin{align} & \sum_k \mid P(Z=k\mid S=1) - P(Z=k \mid S=0)\mid \\ &= \sum_k \mid \frac{P(S=1\mid Z=k)P(Z=k)}{P(S=1)} - \frac{P(S=0\mid Z=k)P(Z=k)}{P(S=0)} \mid \\&= \sum_k P(Z=k)\mid \frac{P(S=1\mid Z=k)}{P(S=1)} - \frac{(1-P(S=1\mid Z=k))}{(1-P(S=1))} \mid   \\ &= \sum_kP(Z=k)\mid \frac{P(S=1\mid Z=k)-P(S=1\mid Z=k)P(S=1)-P(S=1)+P(S=1\mid Z=k)P(S=1)}{P(S=1)(1-P(S=1))}\mid \\ &= \sum_kP(Z=k) \mid \frac{P(S=1\mid Z=k)-P(S=1)}{P(S=1)(1-P(S=1))}\mid\end{align} $$
+
+
+
+If $$L_z$$ is small, it implies that $$\mid P(S=1\mid Z=k) - P(S=1)\mid$$ is small, which means, the mutual information between $$S$$ and $$Z$$ is small. So the sensitive membership is protected.
+
+
+
+Original paper: [Zemel et al. ICML 2013]([Zemel et al. ICML2013](https://www.cs.toronto.edu/~toni/Papers/icml-final.pdf))
