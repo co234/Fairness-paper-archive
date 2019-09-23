@@ -1,3 +1,7 @@
-{
-    "plugins": ["mathjax"]
+{ 
+  "gitbook": "2.5.2",
+  "plugins": ["mathjax"],
+  "structure": {
+    "summary": "docs/SUMMARY.md"
+  }
 }
