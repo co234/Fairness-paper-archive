@@ -4,17 +4,17 @@
 
 > Nowadays, many things have automated by ML systems. For instance, companies use ML system to help them select job applicants; courts in US use ML algorithm for recidivism prediction; Amazon, Netflix use recommender system...
 >
-> We care about fairness because it is highly related to our own benefits. 
+> We care about fairness because it is highly related to our own benefits.
 
- 
+
 
 
 
 #### 1. Cause of unfairness
 
-- Sample size disparity 
+- Sample size disparity
 
-  According to the law of large numbers, with more training examples, the empirical risk is closer to the expected risk, which means increasing training samples, it will help to learn the best hypothesis and therefore get smaller generalisation error. However, sample size in the minority group and majority group is highly imbalanced, which lead to higher error rate in minority group. 
+  According to the law of large numbers, with more training examples, the empirical risk is closer to the expected risk, which means increasing training samples, it will help to learn the best hypothesis and therefore get smaller generalisation error. However, sample size in the minority group and majority group is highly imbalanced, which lead to higher error rate in minority group.
 
 - Bias in data
 
@@ -34,29 +34,29 @@
 
 
 
-#### 2. Fairness criteria 
+#### 2. Fairness criteria
 
 **Typical Setup:**
 
-<span style="color:red">**X**</span>: features of an individual 
+<span style="color:red">**X**</span>: features of an individual
 
 <span style="color:red">**A**</span>: Sensitive attribute (ex. gender, race)
 
-<span style="color:red">**C=C(X,A)**</span>: classifier mapping X and A to some prediction 
+<span style="color:red">**C=C(X,A)**</span>: classifier mapping X and A to some prediction
 
-<span style="color:red">**Y**</span>: actual outcome 
+<span style="color:red">**Y**</span>: actual outcome
 
 
 
 However.....
 
-<span style="color:red">**X**</span>: incorporates all sorts of measurement biases 
+<span style="color:red">**X**</span>: incorporates all sorts of measurement biases
 
 <span style="color:red">**A**</span>: Often not even known, ill-defined, misreported, inferred
 
 <span style="color:red">**C=C(X,A)**</span>: Often not well defined (ex. large production ML system)
 
-<span style="color:red">**Y**</span>: often poor proxy of actual variable of interest 
+<span style="color:red">**Y**</span>: often poor proxy of actual variable of interest
 
 
 
@@ -64,9 +64,9 @@ However.....
 
 - Demographic parity:
 
-  > Assume $C \in \{0,1\}, A\in\{0,1\}$, Classifier $C$ satisfies demographic parity if: 
+  > Assume $$C \in \{0,1\}, A\in\{0,1\}$$, Classifier $$C$$ satisfies demographic parity if:
   >
-  > ​										$P(C=1\mid A=1) = P(C=1\mid A=0)$
+  > ​										$$P(C=1\mid A=1) = P(C=1\mid A=0)$$
 
 - Accuracy parity:
 
@@ -74,11 +74,11 @@ However.....
   >
   > ​										$P(C=Y\mid A=1)=P(C=Y\mid A=0)$
 
-- Precision parity 
+- Precision parity
 
   > Assume $C \in \{0,1\}, A\in\{0,1\}$, $Y \in \{0,1\}$, Classifier $C$ satisfies demographic parity if: 										$P(Y=1\mid C=1, A=1) = P(Y=1\mid C=1,A=0)$
 
-- True positive parity 
+- True positive parity
 
   > Assume $C \in \{0,1\}, A\in\{0,1\}$, $Y \in \{0,1\}$, Classifier $C$ satisfies demographic parity if: 										$P(C=1\mid Y=1, A=1) = P(C=1\mid Y=1,A=0)$
 
@@ -101,16 +101,16 @@ A classifier C cannot simultaneously achieve precision parity, true positive par
 
 
 
-Beyond observational measures is causality. 
+Beyond observational measures is causality.
 
 
 
-#### 3. Fair algorithms 
+#### 3. Fair algorithms
 
-Previous algorithms can be separated into two groups: 
+Previous algorithms can be separated into two groups:
 
-- First group: incorporate certain quantitative fairness policy into existing machine learning algorithms. But such methods typically deal with specific families of classifiers, such as SVMs. 
-- Second group: eliminate the restriction to specific classifier families and treat the underlying classification method as a "black box". Such methods usually implements a wrapper works by pre-processing on the data set or post-processing on the prediction results. 
+- First group: incorporate certain quantitative fairness policy into existing machine learning algorithms. But such methods typically deal with specific families of classifiers, such as SVMs.
+- Second group: eliminate the restriction to specific classifier families and treat the underlying classification method as a "black box". Such methods usually implements a wrapper works by pre-processing on the data set or post-processing on the prediction results.
 
 **3.1 Preprocessing**
 
@@ -118,9 +118,9 @@ Notations:
 
 $\mathbf{X}$: entire data set of individuals  [dims: NxD]
 
-$S$: $S \in \{0,1\}$, if $S=1$, an individual is in a protected group, i.e. $\mathbf{X}^+ \in \mathbf{X}$, vice verse. 
+$S$: $S \in \{0,1\}$, if $S=1$, an individual is in a protected group, i.e. $\mathbf{X}^+ \in \mathbf{X}$, vice verse.
 
-$Z$: a multinomial r.v., where each of the $K$ values represents one of the intermediate set of "prototypes". 
+$Z$: a multinomial r.v., where each of the $K$ values represents one of the intermediate set of "prototypes".
 
 $\mathbf{v}$: prototype locations [dims: KxD]
 
@@ -148,11 +148,11 @@ Meantime, there are three constraints:
 
    Define:
 
-   ​							$M_{n,k}=P(Z=k\mid \mathbf{x}_n)$          $\forall n,k$ 
+   ​							$M_{n,k}=P(Z=k\mid \mathbf{x}_n)$          $\forall n,k$
 
    we want:
 
-   ​							$M^+_k=M^-_k$      $\forall k$ 
+   ​							$M^+_k=M^-_k$      $\forall k$
 
    where:
 
@@ -172,7 +172,7 @@ Meantime, there are three constraints:
 
    ​							$L_x = \sum^N_{n=1}(\mathbf{x}_n - \hat{\mathbf{x}}_n)^2$
 
-   
+
 
 3. induced mapping can still learn good mapping from $\mathbf{X}$ to $Y$
 
@@ -184,17 +184,17 @@ Meantime, there are three constraints:
 
    ​							$L_y = \sum^N_{n=1} -y_n\log \hat{y}_n - (1-y_n)\log (1-\hat{y}_n)$
 
-   
+
 
 So the final objective function is the combination of above three:
 
 ​									$L = A_z \cdot L_z + A_x \cdot L_x + A_y \cdot L_y $
 
-where $A_z, A_x, A_y$ are hyperparameters. 
+where $A_z, A_x, A_y$ are hyperparameters.
 
 
 
-Then it becomes an optimisation problem (minimise $L$)~ 
+Then it becomes an optimisation problem (minimise $L$)~
 
 
 
@@ -204,7 +204,7 @@ $\begin{align} & \sum_k \mid P(Z=k\mid S=1) - P(Z=k \mid S=0)\mid \\ &= \sum_k \
 
 
 
-If $L_z$ is small, it implies that $\mid P(S=1\mid Z=k) - P(S=1)\mid$ is small, which means, the mutual information between $S$ and $Z$ is small. So the sensitive membership is protected. 
+If $L_z$ is small, it implies that $\mid P(S=1\mid Z=k) - P(S=1)\mid$ is small, which means, the mutual information between $S$ and $Z$ is small. So the sensitive membership is protected.
 
 
 
@@ -230,7 +230,7 @@ Adjust objective function by adding constraints to avoid both disparate treatmen
 
 Notations:
 
-$\mathbf{x} \in \mathbb{R}^d$: user feature vectors 
+$\mathbf{x} \in \mathbb{R}^d$: user feature vectors
 
 $y \in \{-1,1\}$: class labels
 
@@ -240,13 +240,13 @@ $f(\mathbf{x})$: mapping function from $\mathbf{x}$ to $y$
 
 prediction results: $\begin{cases} d_{\theta^*}(\mathbf{x}_i) \ge 0, \hat{y}_i = 1 \\ d_{\theta^*}(\mathbf{x}_i)<0,\hat{y}_i=-1 \end{cases} $
 
-$\{\mathbf{z}_i\}^N_{i=1}$: sensitive attributes, the fairness constraints will be used for this feature 
+$\{\mathbf{z}_i\}^N_{i=1}$: sensitive attributes, the fairness constraints will be used for this feature
 
-$\{\mathbf{x}_i\}^N_{i=1}$: attributes for classification 
+$\{\mathbf{x}_i\}^N_{i=1}$: attributes for classification
 
 
 
-Note: feature sets in $\{\mathbf{z}_i\}^N_{i=1}$ and $\{\mathbf{x}_i\}^N_{i=1}$ are disjoint => comply with disparate treatment criterion 
+Note: feature sets in $\{\mathbf{z}_i\}^N_{i=1}$ and $\{\mathbf{x}_i\}^N_{i=1}$ are disjoint => comply with disparate treatment criterion
 
 The authors used covariance between $\{\mathbf{z}_i\}^N_{i=1}$ and $\{d_{\theta}(\mathbf{x}_i)\}^N_{i=1}$ as a measure of decision boundary (un)fairness:
 
@@ -260,7 +260,7 @@ then the empirical covariance will be approximately equal to 0 for a sufficientl
 
 
 
-Then we can write down the objective function: 
+Then we can write down the objective function:
 
 **Minimising loss function under fairness constraints**
 
@@ -270,14 +270,14 @@ Then we can write down the objective function:
 
 ​																$\text{Cov}(\mathbf{z},d_\theta(\mathbf{x})) \ge -\mathbf{c}$
 
-Now, the objective becomes Pareto optimal problem: Multi-objective optimisation 
+Now, the objective becomes Pareto optimal problem: Multi-objective optimisation
 
 we want to:
 
 - minimise the loss function to achieve higher accuracy (performance)
 - minimise $\mathbf{c}$ to achieve fairness
 
-So now, $\mathbf{c}$ becomes the trade-off between fairness and accuracy. If we decrease $\mathbf{c}$ towards to 0, then we can get larger p% value, but the accuracy will suffer from this. 
+So now, $\mathbf{c}$ becomes the trade-off between fairness and accuracy. If we decrease $\mathbf{c}$ towards to 0, then we can get larger p% value, but the accuracy will suffer from this.
 
 
 
@@ -293,11 +293,11 @@ If the correlation between sensitive attributes and class labels is very high, t
 
 ​																 $\gamma \ge0$
 
-$L(\theta^*)$ is the optimal loss under unconstrained classifier. $1+\gamma$ denotes the additional loss if we maximise fairness. If we set $\gamma =0$, we can ensure maximise fairness without any loss. 
+$L(\theta^*)$ is the optimal loss under unconstrained classifier. $1+\gamma$ denotes the additional loss if we maximise fairness. If we set $\gamma =0$, we can ensure maximise fairness without any loss.
 
 
 
-\* The methods can be applied to any convex margin-based classifiers. The authors used SVM and Logistic Regression in the original paper. 
+\* The methods can be applied to any convex margin-based classifiers. The authors used SVM and Logistic Regression in the original paper.
 
 
 
@@ -313,23 +313,23 @@ Problems of above methods:
 
 > *fairness through unawareness*:  Ineffective, Ignoring sensitive attributes (protected features can be predicted from other features)
 >
-> *demographic parity*:  $P(\hat{Y}=1\mid A=0) = P(\hat{Y}=1\mid A=1)$. This method may accept qualified applicants in group $A=0$ but unqualified applicants in group $A=1$. Also, this method would not allow ideal predictor $\hat{Y}=Y$. 
+> *demographic parity*:  $P(\hat{Y}=1\mid A=0) = P(\hat{Y}=1\mid A=1)$. This method may accept qualified applicants in group $A=0$ but unqualified applicants in group $A=1$. Also, this method would not allow ideal predictor $\hat{Y}=Y$.
 
 
 
-Training set: samples from distribution of $(X,A,Y)$. 
+Training set: samples from distribution of $(X,A,Y)$.
 
 Predictor: $\hat{Y}(X)$
 
 
 
-Some definitions: 
+Some definitions:
 
 > Equalised odds:
 >
-> ​                                          $P(\hat{Y}=1\mid A=0,Y=y) = P(\hat{Y}=1\mid A=1,Y=y), y\in\{0,1\}$	
+> ​                                          $P(\hat{Y}=1\mid A=0,Y=y) = P(\hat{Y}=1\mid A=1,Y=y), y\in\{0,1\}$
 >
-> $\hat{Y}$ depends on $A$ only through $Y$. 
+> $\hat{Y}$ depends on $A$ only through $Y$.
 
 
 
@@ -343,11 +343,11 @@ Some definitions:
 
 
 
-This method tried to adjust posteriors that satisfies fairness constraints. The idea is to find a proper threshold of original score function. 
+This method tried to adjust posteriors that satisfies fairness constraints. The idea is to find a proper threshold of original score function.
 
 ![img](roc.png)
 
-The threshold value can be found by ROC curve of two groups. Equalised odds as shown in left graph, the threshold shown in left graph is only when ROC curve of both groups intersects. Equal opportunity is a relax version of equal odds, it can be achieved by satisfying same true positive rate of two groups (right graph). 
+The threshold value can be found by ROC curve of two groups. Equalised odds as shown in left graph, the threshold shown in left graph is only when ROC curve of both groups intersects. Equal opportunity is a relax version of equal odds, it can be achieved by satisfying same true positive rate of two groups (right graph).
 
 
 
@@ -357,15 +357,6 @@ Reference:
 
 - Z Zhong, [*A Tutorial on Fairness in Machine Learning*](https://towardsdatascience.com/a-tutorial-on-fairness-in-machine-learning-3ff8ba1040cb)
 
-- Zemel et al., [*Learning Fair Representations*]( https://www.cs.toronto.edu/~toni/Papers/icml-final.pdf), 2013 ICML. 
+- Zemel et al., [*Learning Fair Representations*]( https://www.cs.toronto.edu/~toni/Papers/icml-final.pdf), 2013 ICML.
 
-- MB Zafar et al., [*Fairness Constraints: Mechanisms for Fair Classification*](https://arxiv.org/pdf/1507.05259.pdf), 2017 AISTATS. 
-
-  
-
-
-
-
-
-
-
+- MB Zafar et al., [*Fairness Constraints: Mechanisms for Fair Classification*](https://arxiv.org/pdf/1507.05259.pdf), 2017 AISTATS.
