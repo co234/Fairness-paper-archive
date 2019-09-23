@@ -1,3 +1,0 @@
-test
-
-$\mathbf{o}$

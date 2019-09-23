@@ -70,17 +70,19 @@ However.....
 
 - Accuracy parity:
 
-  > Assume $A\in \{0,1\}$, Classifier $C$ satisfies accuracy parity if:
+  > Assume $$A\in \{0,1\}$$, Classifier $$C$$ satisfies accuracy parity if:
   >
-  > ​										$P(C=Y\mid A=1)=P(C=Y\mid A=0)$
+  > ​										$$P(C=Y\mid A=1)=P(C=Y\mid A=0)$$
 
 - Precision parity
 
-  > Assume $C \in \{0,1\}, A\in\{0,1\}$, $Y \in \{0,1\}$, Classifier $C$ satisfies demographic parity if: 										$P(Y=1\mid C=1, A=1) = P(Y=1\mid C=1,A=0)$
+  > Assume $$C \in \{0,1\}, A\in\{0,1\}$$, $$Y \in \{0,1\}$$, Classifier $$C$$ satisfies demographic parity if: 										
+  $$P(Y=1\mid C=1, A=1) = P(Y=1\mid C=1,A=0)$$
 
 - True positive parity
 
-  > Assume $C \in \{0,1\}, A\in\{0,1\}$, $Y \in \{0,1\}$, Classifier $C$ satisfies demographic parity if: 										$P(C=1\mid Y=1, A=1) = P(C=1\mid Y=1,A=0)$
+  > Assume $$C \in \{0,1\}, A\in\{0,1\}$$, $$Y \in \{0,1\}$$, Classifier $$C$$ satisfies demographic parity if: 										
+  $$P(C=1\mid Y=1, A=1) = P(C=1\mid Y=1,A=0)$$
 
 - **Group fairness**:
 
@@ -96,8 +98,8 @@ However.....
 
 A classifier C cannot simultaneously achieve precision parity, true positive parity and false positive parity unless:
 
-							- $C=Y$ (the classifier is perfect) or
-							- $P(Y=1 \mid A=0) = P(Y=1 \mid A=1)$ (base rates are equal)
+							- $$C=Y$$ (the classifier is perfect) or
+							- $$P(Y=1 \mid A=0) = P(Y=1 \mid A=1)$$ (base rates are equal)
 
 
 

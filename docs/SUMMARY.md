@@ -1,4 +1,4 @@
-* [Introduction](docs/introduction.md)
+* [Definitions and Causes](docs/introduction.md)
 * [Fairness algorithms](docs/algorithms.md)
    * [Preprocessing](docs/preprocessing.md)
    * [Postprocessing](docs/postprocessing.md)
