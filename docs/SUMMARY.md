@@ -4,4 +4,6 @@
         * [2.1.1 Fairness representations](docs/icml_2013.md)
         * [2.1.2 Variational Fair Autoencoder](docs/vae.md)
    * [2.2 Postprocessing](docs/postprocessing.md)
+        * [2.2.1 Using ROC find new threshold](docs/nips_post.md)
    * [2.3 Add constraints](docs/constraints.md)
+        * [2.3.1 Add fairness constraints to objective function](docs/aistats_2017.md)
