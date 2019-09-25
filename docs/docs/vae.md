@@ -2,7 +2,7 @@
 
 The intuitive idea is to learn fair representations by extracting the most informative hidden factors $$\mathbf{z}$$ and removing uninformative factors (sensitive information or nuisance variables $$\mathbf{s}$$). So the target is to separate $$\mathbf{z}$$ and $$\mathbf{s}$$ from the data. We can do this by using a factorised priors $$p(\mathbf{s})p(\mathbf{z})$$ (this means independent). However, some dependencies may still remain (via variational posterior $$q(\mathbf{z}\mid\mathbf{x},\mathbf{s})$$). Thus the authors use "Maximum Mean Discrepancy" to penalise differences between all order moments of the marginal posterior distribution $$q(\mathbf{z}\mid \mathbf{s}=k)$$ and $$q(\mathbf{z}\mid\mathbf{s}=k')$$.
 
-![img](iclr_2016.png)
+![](iclr_2016.png)
 
 
 
@@ -121,3 +121,7 @@ $$\mathcal{F}_{\text{VFAE}}(\phi,\theta;\mathbf{x}_n,\mathbf{x}_m,\mathbf{s}_n,\
 where:
 
 $$\ell_{\text{MMD}}({\mathbf{Z}_1}_{s=0},{\mathbf{Z}_1}_{s=1})=||\mathbb{E}_{\tilde{p}(\mathbf{x}\mid\mathbf{s}=0)}[\mathbb{E}_{q(\mathbf{z}_1\mid \mathbf{x},\mathbf{s}=0)}[\psi(\mathbf{z}_1)]]-\mathbb{E}_{\tilde{p}(\mathbf{x}\mid\mathbf{s}=1)}[\mathbb{E}_{q(\mathbf{z}_1\mid \mathbf{x},\mathbf{s}=1)}[\psi(\mathbf{z}_1)]]||^2$$
+
+
+
+Original paper: s[Louizos et al. ICLR2016](https://arxiv.org/pdf/1511.00830.pdf)
