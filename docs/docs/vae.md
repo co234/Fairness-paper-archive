@@ -124,4 +124,4 @@ $$\ell_{\text{MMD}}({\mathbf{Z}_1}_{s=0},{\mathbf{Z}_1}_{s=1})=||\mathbb{E}_{\ti
 
 
 
-Original paper: s[Louizos et al. ICLR2016](https://arxiv.org/pdf/1511.00830.pdf)
+Original paper: [Louizos et al. ICLR2016](https://arxiv.org/pdf/1511.00830.pdf)
