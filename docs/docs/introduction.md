@@ -104,3 +104,8 @@ A classifier C cannot simultaneously achieve precision parity, true positive par
 
 
 Beyond observational measures is causality.
+
+
+Reference:
+- Moritz Hardt, [*CS 294: Fairness in Machine Learning*](https://fairmlclass.github.io/)
+- Z Zhong, [*A Tutorial on Fairness in Machine Learning*](https://towardsdatascience.com/a-tutorial-on-fairness-in-machine-learning-3ff8ba1040cb)

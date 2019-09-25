@@ -36,7 +36,7 @@ Some definitions:
 
 This method tried to adjust posteriors that satisfies fairness constraints. The idea is to find a proper threshold of original score function.
 
-![img](roc.png)
+![](roc.png)
 
 The threshold value can be found by ROC curve of two groups. Equalised odds as shown in left graph, the threshold shown in left graph is only when ROC curve of both groups intersects. Equal opportunity is a relax version of equal odds, it can be achieved by satisfying same true positive rate of two groups (right graph).
 
@@ -44,9 +44,7 @@ The threshold value can be found by ROC curve of two groups. Equalised odds as s
 
 
 
-Reference:
 
-- Z Zhong, [*A Tutorial on Fairness in Machine Learning*](https://towardsdatascience.com/a-tutorial-on-fairness-in-machine-learning-3ff8ba1040cb)
 
 - Zemel et al., [*Learning Fair Representations*]( https://www.cs.toronto.edu/~toni/Papers/icml-final.pdf), 2013 ICML.
 

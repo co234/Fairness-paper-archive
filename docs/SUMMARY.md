@@ -6,4 +6,4 @@
    * [2.2 Postprocessing](docs/postprocessing.md)
         * [2.2.1 Using ROC find new threshold](docs/nips_post.md)
    * [2.3 Add constraints](docs/constraints.md)
-        * [2.3.1 Add fairness constraints to objective function](docs/aistats_2017.md)
+        * [2.3.1 Add fairness constraints to objective function](docs/aistatas_2017.md)
