@@ -42,10 +42,4 @@ The threshold value can be found by ROC curve of two groups. Equalised odds as s
 
 
 
-
-
-
-
-- Zemel et al., [*Learning Fair Representations*]( https://www.cs.toronto.edu/~toni/Papers/icml-final.pdf), 2013 ICML.
-
-- MB Zafar et al., [*Fairness Constraints: Mechanisms for Fair Classification*](https://arxiv.org/pdf/1507.05259.pdf), 2017 AISTATS.
+Original paper: [Hardt et al. NIPS2016](https://arxiv.org/pdf/1610.02413.pdf)
