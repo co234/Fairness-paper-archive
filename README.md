@@ -9,11 +9,19 @@
 - [The Variational Fair Autoencoder, Louizos et al. ICLR2016](https://arxiv.org/pdf/1511.00830.pdf)
 
 ## In-processing Paper
-
+- [A Reductions Approach to Fair Classification, Agarwal et al. - ICML 2018](http://proceedings.mlr.press/v80/agarwal18a/agarwal18a.pdf)
+- [Fairness Beyond Disparate Treatment & Disparate Impact:
+Learning Classification without Disparate Mistreatment, Zafar et al. - WWW 2017](https://people.mpi-sws.org/~mzafar/papers/disparate_mistreatment.pdf)
+- [Fairness Constraints: Mechanisms for Fair Classification, Zafar et al. - AISTATS 2017](https://people.mpi-sws.org/~mzafar/papers/disparate_impact.pdf)
+- [When Worlds Collide: Integrating Different
+Counterfactual Assumptions in Fairness, Russell et al. - NIP S2017](https://papers.nips.cc/paper/7220-when-worlds-collide-integrating-different-counterfactual-assumptions-in-fairness.pdf)
 
 
 ## Post-processing Paper 
+- [Equality of Opportunity in Supervised Learning, Hardt et al. - NIPS 2016](https://arxiv.org/pdf/1610.02413.pdf)
 
+
+## Fairness and accuracy tradeoff 
 
 
 ## Casual Fair 
