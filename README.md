@@ -14,7 +14,7 @@
 Learning Classification without Disparate Mistreatment, Zafar et al. - WWW 2017](https://people.mpi-sws.org/~mzafar/papers/disparate_mistreatment.pdf)
 - [Fairness Constraints: Mechanisms for Fair Classification, Zafar et al. - AISTATS 2017](https://people.mpi-sws.org/~mzafar/papers/disparate_impact.pdf)
 - [When Worlds Collide: Integrating Different
-Counterfactual Assumptions in Fairness, Russell et al. - NIP S2017](https://papers.nips.cc/paper/7220-when-worlds-collide-integrating-different-counterfactual-assumptions-in-fairness.pdf)
+Counterfactual Assumptions in Fairness, Russell et al. - NIPS 2017](https://papers.nips.cc/paper/7220-when-worlds-collide-integrating-different-counterfactual-assumptions-in-fairness.pdf)
 
 
 ## Post-processing Paper 
@@ -22,7 +22,9 @@ Counterfactual Assumptions in Fairness, Russell et al. - NIP S2017](https://pape
 
 
 ## Fairness and accuracy tradeoff 
+- [Unlocking Fairness: a Trade-off Revisited, Wick et al. - NIPS 2019](https://papers.nips.cc/paper/9082-unlocking-fairness-a-trade-off-revisited.pdf)
 
+## Individual fairness 
 
 ## Casual Fair 
 
