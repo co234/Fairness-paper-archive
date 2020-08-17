@@ -53,4 +53,3 @@ Counterfactual Assumptions in Fairness, Russell et al. - NIPS 2017](https://pape
 - [Differentially Private Fair Learning, Jagielski et al. - ICML 2019](https://arxiv.org/pdf/1812.02696.pdf)
 
 
-
