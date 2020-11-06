@@ -57,10 +57,12 @@ Counterfactual Assumptions in Fairness, Russell et al. - NIPS 2017](https://pape
 
 * [Adult](https://archive.ics.uci.edu/ml/datasets/adult)
 * [Arrhythmia](https://archive.ics.uci.edu/ml/datasets/Arrhythmia)
+* [Cancer](https://archive.ics.uci.edu/ml/datasets/Cervical+cancer+%28Risk+Factors%29)
 * [COMPAS](https://github.com/propublica/compas-analysis)
 * [Drug](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29)
 * [FICO](https://community.fico.com/s/explainable-machine-learning-challenge)
 * [German](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29)
+* [Lending club](https://www.kaggle.com/wordsforthewise/lending-club)
 
 
 
