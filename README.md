@@ -48,6 +48,7 @@ Counterfactual Assumptions in Fairness, Russell et al. - NIPS 2017](https://pape
 - [Achieving Non-Discrimination in Prediction, Zhang et al. - IJCAI 2018](https://arxiv.org/pdf/1703.00060.pdf)
 - [Counterfactual Fairness, Kusner et al. - NIPS 2017](https://papers.nips.cc/paper/6995-counterfactual-fairness)
 - [Equality of Opportunity in Classification: A Causal Approach, Zhang and Bareinboim - NIPS 2018](https://papers.nips.cc/paper/7625-equality-of-opportunity-in-classification-a-causal-approach)
+- [Path-Specific Counterfactual Fairness](http://arxiv.org/abs/1802.08139)
 
 ### Privacy
 - [Differentially Private Fair Learning, Jagielski et al. - ICML 2019](https://arxiv.org/pdf/1812.02696.pdf)
