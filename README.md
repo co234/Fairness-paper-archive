@@ -3,6 +3,7 @@
 ### Pre-processing
 #### 1. Fair representation learning
 - [A statistical framework for fair predictive algorithms, Lum and Johndrow - arXiv 2016](https://arxiv.org/pdf/1610.08077.pdf)
+- [Conditional learning of fair representations, Zhao et al. - ICLR 2020](https://openreview.net/pdf?id=Hkekl0NFPr)
 - [Flexibly fair representation learning by disentanglement, Creager et al. - ICML 2019](http://proceedings.mlr.press/v97/creager19a/creager19a.pdf)
 - [Learning Fair Representations, Zemel et al. - ICML 2013](https://www.cs.toronto.edu/~toni/Papers/icml-final.pdf)
 - [Optimized pre-processing for discrimination prevention, Calmon et al. - NIPS 2017](https://papers.nips.cc/paper/6988-optimized-pre-processing-for-discrimination-prevention.pdf)
@@ -39,6 +40,10 @@ Counterfactual Assumptions in Fairness, Russell et al. - NIPS 2017](https://pape
 - [Inherent Trade-offs in the Fair Determination of Risk Scores, Kleinberg et al. - arXiv 2016](https://arxiv.org/pdf/1609.05807.pdf)
 - [Unlocking Fairness: a Trade-off Revisited, Wick et al. - NIPS 2019](https://papers.nips.cc/paper/9082-unlocking-fairness-a-trade-off-revisited.pdf)
 
+
+### Label bias/ Distribution shift
+- [Label Bias, Label Shift: Fair Machine Learning with Unreliable Labels, Dai and Brown - NIPS 2020](https://dynamicdecisions.github.io/assets/pdfs/29.pdf)
+- [Does enforcing fairness mitigate biases caused by subpopulation shift? Maity et al. - NIPS 2021](https://arxiv.org/abs/2011.03173)
 
 ### Individual fairness 
 - [Average Individual Fairness: Algorithms, Generalization and Experiments, Kearns et al. - NIPS 2019](https://arxiv.org/pdf/1905.10607.pdf)
